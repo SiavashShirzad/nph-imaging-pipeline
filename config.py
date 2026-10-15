@@ -1,0 +1,36 @@
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent
+MODEL_DIR = PROJECT_ROOT / "model"
+
+LANDMARK_WEIGHTS = "acpc/AC_PC_IVF_BestModel.pth"
+ICV_DIR = "icv"
+VENT_DIR = "ventricles"
+CA_WEIGHTS = "ca/best_pretrained_segmentation_model_2.pth"
+DESI_WEIGHTS = "desi/best_model.pth"
+
+STAGES = ("align", "evans", "ca", "desi")
+CONDITIONAL_STAGES = ("ca", "desi")
+
+EVANS_THRESHOLD = 0.30
+CALLOSAL_ANGLE_THRESHOLD = 90.0
+EVANS_FRACTION = 0.2
+ACPC_RANGE_MM = (15.0, 40.0)
+IVF_AC_RANGE_MM = (2.0, 15.0)
+
+DESI_CLASSES = {"RSF": 1, "LSF": 2, "HC": 3}
+DESI_NUM_CLASSES = len(DESI_CLASSES) + 1
+DESI_HC_ANGLE_DEG = 15.0
+DESI_SLICE_PAD_FRACTION = 0.05
+
+SEGMENTATION_INPUT_SIZE = (224, 224)
+IMAGENET_MEAN = (0.485, 0.456, 0.406)
+IMAGENET_STD = (0.229, 0.224, 0.225)
+
+N4_SHRINK = 4
+N4_ITERATIONS = (50, 50, 50, 50)
+N4_CONVERGENCE = 1e-6
+REGISTRATION_SHRINK = (4, 2, 1)
+REGISTRATION_SMOOTHING_MM = (2.0, 1.0, 0.0)
+REGISTRATION_SAMPLING = 0.05
+REGISTRATION_SEED = 42

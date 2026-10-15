@@ -1,0 +1,24 @@
+# Trained models are distributed as a release asset, not in git (see download_models.py)
+model/*
+!model/README.md
+
+# Outputs and scratch
+output/
+results/
+*.nii
+*.nii.gz
+*.png
+!docs/*.png
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+*.egg-info/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
